@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tetris</string>
+    <string name="app_name">GameAndWebView</string>
     <string name="score_start">Score: 0</string>
     <string name="game_over">GAME OVER</string>
     <string name="start">Start</string>
