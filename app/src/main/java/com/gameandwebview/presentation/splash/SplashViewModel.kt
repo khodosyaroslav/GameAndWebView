@@ -1,6 +1,8 @@
 package com.gameandwebview.presentation.splash
 
-import android.util.Log
+import android.content.Context
+import android.net.ConnectivityManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.ktx.Firebase
@@ -8,12 +10,12 @@ import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
-import kotlin.coroutines.suspendCoroutine
 
 @HiltViewModel
 class SplashViewModel @Inject constructor() : ViewModel() {
@@ -33,5 +35,4 @@ class SplashViewModel @Inject constructor() : ViewModel() {
             _gameDisabled.emit(remoteConfig.getBoolean("game_disabled"))
         }
     }
-
 }
