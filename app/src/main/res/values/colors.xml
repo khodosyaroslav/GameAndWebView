@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="sb_day">#CECECE</color>
+    <color name="btn_day">#19ABED</color>
+    <color name="text_day">#FFC300</color>
 </resources>

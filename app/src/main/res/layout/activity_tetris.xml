@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sb_day"
+    tools:context=".presentation.tetris.TetrisActivity">
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:text="@string/score_start"
+        android:textColor="@color/text_day"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.gameandwebview.presentation.tetris.GameFrame
+        android:id="@+id/game_container"
+        android:layout_width="@dimen/game_size"
+        android:layout_height="@dimen/game_size"
+        android:layout_marginTop="5dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/game_over"
+        android:textColor="@color/text_day"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/game_container"
+        app:layout_constraintEnd_toEndOf="@id/game_container"
+        app:layout_constraintStart_toStartOf="@id/game_container"
+        app:layout_constraintTop_toTopOf="@+id/game_container" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_control"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_control"
+        android:text="@string/start"
+        android:textColor="@color/text_day"
+        app:layout_constraintEnd_toEndOf="@id/game_container"
+        app:layout_constraintTop_toBottomOf="@id/game_container" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_rotate"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/btn_game"
+        android:src="@drawable/arrow_rotate"
+        app:layout_constraintBottom_toBottomOf="@id/btn_down"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/btn_up" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_up"
+        style="@style/NavigationButton"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_left"
+        app:layout_constraintStart_toEndOf="@+id/btn_left" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_left"
+        style="@style/NavigationButton"
+        android:src="@drawable/arrow_left"
+        app:layout_constraintBottom_toTopOf="@+id/btn_down"
+        app:layout_constraintEnd_toStartOf="@id/btn_down" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_right"
+        style="@style/NavigationButton"
+        android:src="@drawable/arrow_right"
+        app:layout_constraintBottom_toTopOf="@+id/btn_down"
+        app:layout_constraintStart_toEndOf="@id/btn_down" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_down"
+        style="@style/NavigationButton"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/arrow_down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
