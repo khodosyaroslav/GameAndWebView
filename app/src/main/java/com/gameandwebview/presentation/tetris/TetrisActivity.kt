@@ -9,7 +9,9 @@ import com.gameandwebview.data.tetris.GameTurn
 import com.gameandwebview.databinding.ActivityTetrisBinding
 import com.gameandwebview.domain.tetris.GameModelImpl
 import com.gameandwebview.domain.tetris.GameViewImpl
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TetrisActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTetrisBinding
 
